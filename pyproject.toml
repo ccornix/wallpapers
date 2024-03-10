@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 79
+target-version = ['py311']
+
+[tool.mypy]
+cache_dir = '/tmp/wallpapers_mypy_cache'
+python_version = '3.11'
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = 'sympy'
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+cache_dir = '/tmp/wallpapers_pytest_cache'
