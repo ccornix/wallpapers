@@ -22,8 +22,8 @@ def koch_rule(segment: Matrix) -> list[Matrix]:
     https://mathworld.wolfram.com/KochSnowflake.html
     """
     v1 = segment / 3
-    v2 = R_m60 * v1
-    v3 = R_p60 * v1
+    v2 = R_p60 * v1
+    v3 = R_m60 * v1
     return [v1, v2, v3, v1]
 
 
