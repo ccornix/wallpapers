@@ -14,7 +14,7 @@ from .path import (
     refined_segments,
     rotation_matrix,
 )
-from .poly import regular_polygon_path, rotation_matrix
+from .poly import regular_polygon_path
 
 R_m90 = rotation_matrix(-pi / 2)
 

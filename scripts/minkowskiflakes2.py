@@ -4,7 +4,6 @@ __author__ = "ccornix"
 __copyright__ = "Copyright (c) 2024 ccornix"
 __license__ = "MIT"
 
-from sympy import sqrt
 import random
 
 from lib.minkowski import minkowski_island
