@@ -28,12 +28,12 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
   <img src="wallpapers/kochflakes3.svg" width="960">
 </a>
 
-#### `minkowskiflakes2`
+#### `minkowskiflakes4`
 
-[Minkowski islands](https://mathworld.wolfram.com/MinkowskiSausage.html) (2 iterations)
+[Minkowski islands](https://mathworld.wolfram.com/MinkowskiSausage.html) (4 iterations)
 
-<a href="https://codeberg.org/ccornix/wallpapers/src/branch/main/wallpapers/minkowskiflakes2.svg">
-  <img src="wallpapers/minkowskiflakes2.svg" width="960">
+<a href="https://codeberg.org/ccornix/wallpapers/src/branch/main/wallpapers/minkowskiflakes4.svg">
+  <img src="wallpapers/minkowskiflakes4.svg" width="960">
 </a>
 
 ## SVG generation and rendering

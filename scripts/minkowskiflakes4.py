@@ -14,9 +14,9 @@ from lib.svg import generate_svg
 
 PALETTE = ["#202020", "#303030", "#404040", "#505050"]
 RESOLUTION = (1920, 1080)
-CELL_SIZE = (40, 40)
+CELL_SIZE = (120, 120)
 SPACINGS = (CELL_SIZE[0], CELL_SIZE[1] // 2)
-ISLE = minkowski_island(iterations=2)
+ISLE = minkowski_island(iterations=4)
 ELEMENT_PATHS = [scale(ISLE, (CELL_SIZE[0] // 2, CELL_SIZE[1] // 2))]
 
 
