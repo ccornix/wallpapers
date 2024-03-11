@@ -27,17 +27,19 @@
             src = self;
           }
           ''
+            # FIXME: occasionally, Nix fails with
+            # error: boost::bad_format_string: format-string is ill-formed
+            # The root cause has not yet been identified.
+            # Possible related bugs:
+            # https://github.com/NixOS/nix/issues/8761
+            # https://github.com/NixOS/nix/issues/9204
+
             export PYTHONPATH="$PYTHONPATH:$src/scripts"
             mkdir "$out"
             mypy --config-file "$src/pyproject.toml" \
               "$src/scripts"/*.py "$src/tests"/*.py
             pytest "$src/tests"
-            # FIXME: flake8 fails with
-            # error: boost::bad_format_string: format-string is ill-formed
-            # Possible related Nix bugs:
-            # https://github.com/NixOS/nix/issues/8761
-            # https://github.com/NixOS/nix/issues/9204
-            # flake8 "$src/scripts" "$src/tests"
+            flake8 "$src/scripts" "$src/tests"
             black --check "$src/scripts" "$src/tests"
           '';
       };
