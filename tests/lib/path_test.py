@@ -1,10 +1,11 @@
 """Unit tests for module `lib.path`."""
 
-from sympy import Matrix, Rational
+from sympy import Matrix, Rational, pi
 
 from lib.path import (
     points_to_segments,
     refined_segments,
+    rotate,
     scale,
     segments_to_points,
     shift,
@@ -66,6 +67,24 @@ def test_shift() -> None:
         Matrix([3, 3]),
         Matrix([-1, 3]),
         Matrix([-1, 1]),
+    ]
+
+
+def test_identity_rotation() -> None:
+    """Test whether rotating with zero angle is an identity operation."""
+    rotated = rotate(points, 0)
+    assert rotated == points
+
+
+def test_rotation() -> None:
+    """Test 90-deg rotation."""
+    rotated = rotate(points, pi / 2)
+    assert rotated == [
+        Matrix([1, -2]),
+        Matrix([1, 2]),
+        Matrix([-1, 2]),
+        Matrix([-1, -2]),
+        Matrix([1, -2]),
     ]
 
 

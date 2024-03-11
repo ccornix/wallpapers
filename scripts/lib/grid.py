@@ -35,9 +35,7 @@ def generate_grid(
     directions. Finally, `element_style_fn` enables one to define an
     index-dependent style for each path of a cell.
 
-    A dict is returned that contains a list of SVG path data and the target
-    resolution. This dict can readily be used as keyword arguments to
-    `generate_svg()` of the `svg` submodule.
+    A list of SVG path data is returned.
     """
     dx, dy = spacings
     w, h = resolution
