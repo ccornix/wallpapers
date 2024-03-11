@@ -14,7 +14,7 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 #### `gosperflakes2`
 
-[Gosper islands (snowflakes)](https://mathworld.wolfram.com/GosperIsland.html) (2 iterations)
+[Gosper islands](https://mathworld.wolfram.com/GosperIsland.html) (2 iterations)
 
 <a href="https://codeberg.org/ccornix/wallpapers/src/branch/main/wallpapers/gosperflakes2.svg">
   <img src="wallpapers/gosperflakes2.svg" width="960">
@@ -22,10 +22,18 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 #### `kochflakes3`
 
-[Koch islands (snowflakes)](https://mathworld.wolfram.com/KochSnowflake.html) (3 iterations)
+[Koch islands](https://mathworld.wolfram.com/KochSnowflake.html) (3 iterations)
 
 <a href="https://codeberg.org/ccornix/wallpapers/src/branch/main/wallpapers/kochflakes3.svg">
   <img src="wallpapers/kochflakes3.svg" width="960">
+</a>
+
+#### `minkowskiflakes2`
+
+[Minkowski islands](https://mathworld.wolfram.com/MinkowskiSausage.html) (2 iterations)
+
+<a href="https://codeberg.org/ccornix/wallpapers/src/branch/main/wallpapers/minkowskiflakes2.svg">
+  <img src="wallpapers/minkowskiflakes2.svg" width="960">
 </a>
 
 ## SVG generation and rendering
