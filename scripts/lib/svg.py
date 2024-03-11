@@ -109,5 +109,8 @@ SVG_TEMPLATE = """\
 <ccornix:palette>{palette_str}</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="{background_color}"/>
+<!-- Flip the y axis and move the origin to the bottom left corner -->
+<g transform="translate(0,{height}) scale(1,-1)">
 {paths_str}
+</g>
 </svg>"""

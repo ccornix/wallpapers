@@ -20,7 +20,10 @@ expected_svg = """\
 <ccornix:palette>#000000 #ffffff</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="#000000"/>
+<!-- Flip the y axis and move the origin to the bottom left corner -->
+<g transform="translate(0,100) scale(1,-1)">
 <path style="fill:#000000;stroke:#ffffff;stroke-width:1;stroke-linecap:square" d="M -2.0,-1.0 2.0,-1.0 2.0,1.0 -2.0,1.0 z"/>
+</g>
 </svg>"""  # noqa: E501
 
 
