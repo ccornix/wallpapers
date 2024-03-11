@@ -3,12 +3,13 @@
 __author__ = "ccornix"
 __copyright__ = "Copyright (C) 2024 ccornix"
 __license__ = "MIT"
-__all__ = ["generate_grid"]
+__all__ = ["generate_grid", "make_random_color_element_style_fn"]
 
 from collections.abc import Callable, Sequence
-from operator import add
 from sympy import Matrix
 from typing import cast
+import operator
+import random
 
 from .path import shift
 from .svg import SVGPath, SVGPathStyle
@@ -65,7 +66,13 @@ def generate_grid(
                 # HACK: https://github.com/python/mypy/issues/7509
                 cast(
                     tuple[TNum, TNum],
-                    tuple(map(add, offsets_fn(ix, iy), (ix * dx, iy * dy))),
+                    tuple(
+                        map(
+                            operator.add,
+                            offsets_fn(ix, iy),
+                            (ix * dx, iy * dy),
+                        )
+                    ),
                 ),
             ),
             style=wrapped_style(ix, iy)[ip],
@@ -74,3 +81,39 @@ def generate_grid(
         for ix in range(Nx + 1)
         for ip, element_path in enumerate(element_paths)
     ]
+
+
+def make_random_color_element_style_fn(
+    fill_color: str | Sequence[str],
+    stroke_color: str | Sequence[str],
+    stroke_width: int,
+    stroke_linecap: str = "square",
+    count: int = 1,
+) -> Callable[[int, int], list[SVGPathStyle]]:
+    """Make an element style factory function for `count` number of paths.
+
+    If `fill_color` is a sequence of colors, a random color is chosen from the
+    sequence. The same applies for `stroke_color`.
+    """
+
+    def make_element_styles(ix: int, iy: int) -> list[SVGPathStyle]:
+        """Return SVG path styles with a randomly selected fill color."""
+        return [
+            SVGPathStyle(
+                fill_color=(
+                    fill_color
+                    if isinstance(fill_color, str)
+                    else random.choice(fill_color)
+                ),
+                stroke_color=(
+                    stroke_color
+                    if isinstance(stroke_color, str)
+                    else random.choice(stroke_color)
+                ),
+                stroke_width=stroke_width,
+                stroke_linecap=stroke_linecap,
+            )
+            for _ in range(count)
+        ]
+
+    return make_element_styles
