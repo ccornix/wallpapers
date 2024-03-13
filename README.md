@@ -40,31 +40,25 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 Clone this repo using `git`, and enter the repo directory.
 
-Wallpapers with the default palette can be built as follows. Using stable Nix as
-
+Wallpapers with the default palette can be built as
 ```sh
 nix-build -E '(import ./pkgs { }).hexagons'
 ```
-
-while using Flakes-enabled Nix as
-
+or using Flakes-enabled Nix as
 ```sh
 nix build .#hexagons
 ```
 
 The generated SVG and PNG files are contained within the `result` subdirectory.
 
-The palette can be customized when building, using stable Nix as
-
+The palette can be customized when building as
 ```sh
 nix-build -E '
 (import ./pkgs { }).hexagons.override {
   palette = ["#000000" "#3f1f0f" "#7f3f1f" "#ff7f3f"];
 }'
 ```
-
-while using Flakes-enabled Nix as
-
+or using Flakes-enabled Nix as
 ```sh
 nix build --impure --expr '
 (import ./pkgs { }).hexagons.override {
@@ -72,18 +66,46 @@ nix build --impure --expr '
 }'
 ```
 
-## Python development
+## Development
 
-Clone this repo using `git` and open a development shell inside the repo directory. The latter can be accomplished using stable Nix as
+### First steps
 
+Clone this repo using `git`, and enter the repo directory. Open a development shell as
 ```sh
 nix-shell
 ```
-
-while using Flakes-enabled Nix as
-
+or using Flakes-enabled Nix as
 ```sh
 nix develop
+```
+
+This repository follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. To enforce it, install the `gitlint` commit-msg hook on the first occasion as
+```sh
+gitlint install-hook
+```
+
+### Running the SVG generators
+
+The SVG-generating Python scripts can be run from within the Nix development shell as
+```sh
+python scripts/hexagons.py > /tmp/hexagons.svg
+```
+where the script name and the output path should be customized.
+
+### Testing and formatting
+
+Unit testting and linting of the SVG-generator Python code as well as checking of the flake itself can be run using Flakes-enabled Nix as
+```sh
+nix flake check
+```
+There is currently no automatic re-formatting, it is expected to be run manually. For the SVG-generator Python code, enter the Nix development shell
+while inside the repo directory and run
+```sh
+black scripts tests
+```
+while for the Nix code, run (using Flakes-enabled Nix)
+```sh
+nix fmt
 ```
 
 ## References
