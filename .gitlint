@@ -5,6 +5,8 @@ ignore=body-is-missing
 # Enable specific community contributed rules
 contrib=contrib-title-conventional-commits
 
+regex-style-search=True
+
 # Set the extra-path where gitlint will search for user defined rules
 # extra-path=
 
@@ -16,3 +18,5 @@ line-length=80
 [title-min-length]
 min-length=5
 
+[author-valid-email]
+regex=ccornix1758@gmail.com
