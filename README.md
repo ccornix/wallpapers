@@ -8,7 +8,7 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 #### `hexagons`
 
-<a href="blob/main/wallpapers/hexagons.svg">
+<a href="wallpapers/hexagons.svg">
   <img src="wallpapers/hexagons.svg" width="960">
 </a>
 
@@ -16,7 +16,7 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 [Gosper islands](https://mathworld.wolfram.com/GosperIsland.html) (2 iterations)
 
-<a href="blob/main/wallpapers/gosperflakes2.svg">
+<a href="wallpapers/gosperflakes2.svg">
   <img src="wallpapers/gosperflakes2.svg" width="960">
 </a>
 
@@ -24,7 +24,7 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 [Koch islands](https://mathworld.wolfram.com/KochSnowflake.html) (3 iterations)
 
-<a href="blob/main/wallpapers/kochflakes3.svg">
+<a href="wallpapers/kochflakes3.svg">
   <img src="wallpapers/kochflakes3.svg" width="960">
 </a>
 
@@ -32,7 +32,7 @@ The SVG wallpapers in the `wallpapers` directory have been generated using Pytho
 
 [Minkowski islands](https://mathworld.wolfram.com/MinkowskiSausage.html) (4 iterations)
 
-<a href="blob/main/wallpapers/minkowskiflakes4.svg">
+<a href="wallpapers/minkowskiflakes4.svg">
   <img src="wallpapers/minkowskiflakes4.svg" width="960">
 </a>
 
