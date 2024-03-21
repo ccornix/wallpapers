@@ -1,4 +1,4 @@
-# A collection of procedurally generated seamless geometric wallpapers
+# Seamless geometric wallpapers
 
 The SVG wallpapers in the `wallpapers` directory have been generated using Python code contained in the `scripts` directory. [Nix](https://nixos.org/) packages contained in this [flake](https://nixos.wiki/wiki/Flakes) render PNGs from the pre-generated SVGs, optionally re-colored using a customized palette to match the color scheme of the user's desktop theme.
 
