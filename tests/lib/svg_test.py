@@ -16,7 +16,7 @@ expected_svg = """\
    xmlns:dc="http://purl.org/dc/elements/1.1/">
 <title property="dc:title">title</title>
 <desc property="dc:creator">author</desc>
-<metadata xmlns:ccornix="https://codeberg.org/ccornix/wallpapers">
+<metadata xmlns:ccornix="ccornix/wallpapers">
 <ccornix:palette>#000000 #ffffff</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="#000000"/>

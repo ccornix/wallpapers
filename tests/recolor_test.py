@@ -11,7 +11,7 @@ INPUT_SVG = """\
    viewBox="0 0 1920 1080"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg">
-<metadata xmlns:ccornix="https://codeberg.org/ccornix/wallpapers">
+<metadata xmlns:ccornix="ccornix/wallpapers">
 <ccornix:palette>#000000 #777777 #ffffff</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="#ffffff"/>
@@ -26,7 +26,7 @@ OUTPUT_SVG = """\
    viewBox="0 0 1920 1080"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg">
-<metadata xmlns:ccornix="https://codeberg.org/ccornix/wallpapers">
+<metadata xmlns:ccornix="ccornix/wallpapers">
 <ccornix:palette>#ffffff #777777 #000000</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="#000000"/>

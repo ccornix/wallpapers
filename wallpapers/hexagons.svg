@@ -8,7 +8,7 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/">
 <title property="dc:title">Randomly colored hexagons</title>
 <desc property="dc:creator">ccornix</desc>
-<metadata xmlns:ccornix="https://codeberg.org/ccornix/wallpapers">
+<metadata xmlns:ccornix="ccornix/wallpapers">
 <ccornix:palette>#202020 #303030 #404040 #505050</ccornix:palette>
 </metadata>
 <rect width="100%" height="100%" fill="#202020"/>

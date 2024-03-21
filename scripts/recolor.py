@@ -42,8 +42,7 @@ def parse_arguments() -> argparse.Namespace:
 #     """Return the palette extracted from the custom tag of the SVG code."""
 #     from xml.etree import ElementTree
 #     tree = ElementTree.fromstring(svg)
-#     NS_URL = "https://codeberg.org/ccornix/wallpapers"
-#     element = tree.getroot().find(f".//{{{NS_URL}}}palette")
+#     element = tree.getroot().find(f".//{ccornix/wallpapers}palette")
 #     palette = element.text.split()
 #     assert all(COLOR_PATTERN.match(color) for color in palette)
 #     return palette
