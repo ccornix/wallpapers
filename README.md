@@ -94,12 +94,22 @@ where the script name and the output path should be customized.
 
 ### Testing and formatting
 
-Unit testting and linting of the SVG-generator Python code as well as checking of the flake itself can be run using Flakes-enabled Nix as
+#### Testing
+
+Unit testing and linting of the SVG-generator Python code as well as checking the flake itself can be executed using Flakes-enabled Nix as
 ```sh
 nix flake check
 ```
-There is currently no automatic re-formatting, it is expected to be run manually. For the SVG-generator Python code, enter the Nix development shell
-while inside the repo directory and run
+
+When using Nix older than 2.19, check may fail due to a bug with the error message
+```
+error: boost::bad_format_string: format-string is ill-formed
+```
+This problem can be resolved by upgrading Nix to 2.19 or newer. See also Github issues [#8761][https://github.com/NixOS/nix/issues/8761] and [#9204][https://github.com/NixOS/nix/issues/9204].
+
+#### Formatting
+
+Re-formatting is currently expected to be initiated manually. For the SVG-generator Python code, enter the Nix development shell while inside the repo directory and run
 ```sh
 black scripts tests
 ```
