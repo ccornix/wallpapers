@@ -27,13 +27,6 @@
             src = self;
           }
           ''
-            # FIXME: occasionally, Nix fails with
-            # error: boost::bad_format_string: format-string is ill-formed
-            # The root cause has not yet been identified.
-            # Possible related bugs:
-            # https://github.com/NixOS/nix/issues/8761
-            # https://github.com/NixOS/nix/issues/9204
-
             export PYTHONPATH="$PYTHONPATH:$src/scripts"
             mkdir "$out"
             mypy --config-file "$src/pyproject.toml" \
