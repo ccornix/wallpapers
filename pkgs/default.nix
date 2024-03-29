@@ -8,5 +8,6 @@ lib.genAttrs [
   "hexagons"
   "gosperflakes2"
   "kochflakes3"
+  "minkowskiflakes4"
 ]
   mkPkg
