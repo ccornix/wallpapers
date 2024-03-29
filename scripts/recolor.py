@@ -38,8 +38,8 @@ def parse_arguments() -> argparse.Namespace:
         metavar="COLOR",
         nargs="*",
         help=(
-            "HTML color code of a palette color without the leading hash mark; "
-            "e.g. 22aaff"
+            "HTML color code of a palette color without the leading hash "
+            "mark; e.g. 22aaff"
         ),
     )
     return parser.parse_args()
