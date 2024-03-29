@@ -105,7 +105,7 @@ When using Nix older than 2.19, check may fail due to a bug with the error messa
 ```
 error: boost::bad_format_string: format-string is ill-formed
 ```
-This problem can be resolved by upgrading Nix to 2.19 or newer. See also Github issues [#8761][https://github.com/NixOS/nix/issues/8761] and [#9204][https://github.com/NixOS/nix/issues/9204].
+This problem can be resolved by upgrading Nix to 2.19 or newer. See also Github issues [#8761](https://github.com/NixOS/nix/issues/8761) and [#9204](https://github.com/NixOS/nix/issues/9204).
 
 #### Formatting
 
