@@ -2,41 +2,41 @@
 , librsvg
 , python3
 , stdenvNoCC
+  # wallpaper name
 , name
-, # wallpaper name
-  palette ? [ ]
-, # new palette colors as a list
-  width ? 1920
-, # width of the generated PNG
+  # new palette colors as a list (HTML hex color codes without the leading hash
+  # mark)
+, palette ? [ ]
+  # width of the generated PNG
+, width ? 1920
 }:
 
 let
-  paletteArgs = builtins.concatStringsSep " " (
-    map lib.escapeShellArg palette
-  );
-in
-stdenvNoCC.mkDerivation {
-  inherit name;
-  src = ../.;
-  dontUnpack = true;
+  paletteArgs = builtins.concatStringsSep " " (map lib.escapeShellArg palette);
 
-  nativeBuildInputs = [ python3 ];
-  buildInputs = [ librsvg ];
-  buildPhase = ''
-    python3 "$src/scripts/recolor.py" "$src/wallpapers/${name}.svg" \
-      ${paletteArgs} > wallpaper.svg
-    rsvg-convert -a -w ${toString width} wallpaper.svg -o wallpaper.png
-    # Fallback solution for conversion:
-    # inkscape \
-    #   --export-type=png \
-    #   --export-width=${toString width} \
-    #   --export-filename=wallpaper.png \
-    #   wallpaper.svg
-  '';
+  targetDir = "share/backgrounds/ccornix";
 
-  installPhase = ''
-    mkdir -p "$out"
-    install -Dm0644 wallpaper.svg "$out/wallpaper.svg"
-    install -Dm0644 wallpaper.png "$out/wallpaper.png"
-  '';
-}
+  pkg = stdenvNoCC.mkDerivation {
+    inherit name;
+    src = ../.;
+    dontUnpack = true;
+
+    nativeBuildInputs = [ python3 ];
+    buildInputs = [ librsvg ];
+    buildPhase = ''
+      python3 "$src/scripts/recolor.py" "$src/wallpapers/${name}.svg" \
+        ${paletteArgs} > ${name}.svg
+      rsvg-convert -a -w ${toString width} ${name}.svg -o ${name}.png
+    '';
+
+    passthru = {
+      filePath = "${pkg}/${targetDir}/${name}.png";
+    };
+
+    installPhase = ''
+      mkdir -p "$out/${targetDir}"
+      install -Dm0644 ${name}.svg "$out/${targetDir}/${name}.svg"
+      install -Dm0644 ${name}.png "$out/${targetDir}/${name}.png"
+    '';
+  };
+in pkg

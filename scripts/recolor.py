@@ -13,7 +13,13 @@ COLOR_PATTERN = re.compile(r"^#[0-9a-fA-F]{6}$")
 def main() -> None:  # noqa: D103
     args = parse_arguments()
     svg = args.input_file.read_text()
-    print(replace_palette(svg, old=extract_palette(svg), new=args.palette))
+    print(
+        replace_palette(
+            svg,
+            old=extract_palette(svg),
+            new=[c if c.startswith("#") else f"#{c}" for c in args.palette],
+        )
+    )
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -31,7 +37,10 @@ def parse_arguments() -> argparse.Namespace:
         "palette",
         metavar="COLOR",
         nargs="*",
-        help="HTML color code of a palette color; e.g. #123456",
+        help=(
+            "HTML color code of a palette color without the leading hash mark; "
+            "e.g. 22aaff"
+        ),
     )
     return parser.parse_args()
 

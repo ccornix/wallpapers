@@ -55,14 +55,14 @@ The palette can be customized when building as
 ```sh
 nix-build -E '
 (import ./pkgs { }).hexagons.override {
-  palette = ["#000000" "#3f1f0f" "#7f3f1f" "#ff7f3f"];
+  palette = ["000000" "3f1f0f" "7f3f1f" "ff7f3f"];
 }'
 ```
 or using Flakes-enabled Nix as
 ```sh
 nix build --impure --expr '
 (import ./pkgs { }).hexagons.override {
-  palette = ["#000000" "#3f1f0f" "#7f3f1f" "#ff7f3f"];
+  palette = ["000000" "3f1f0f" "7f3f1f" "ff7f3f"];
 }'
 ```
 
